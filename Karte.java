@@ -8,7 +8,7 @@ public class Karte extends Button {
     private boolean spielbar;
     
     /**
-     * Erzeugt eine neue Karte.
+     * Erzeugt eine neue Karte
      * @param x x-Koordinate
      * @param y y-Koordinate
      * @param wert der Wert der Karte
