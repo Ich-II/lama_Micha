@@ -7,6 +7,8 @@ public class Spiel extends UIWorld{
         
         addScene(new Spielregeln());
         addScene(new Spieltisch());
+        addScene(new Startscreen());
+        addScene(new Ergebnis());
         
         useScene(Spieltisch.class);
     }

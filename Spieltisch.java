@@ -18,5 +18,12 @@ public class Spieltisch extends Scene{
                     world.useScene(Spielregeln.class);
                 }
             });
+        
+        addElement(new Button(1085, 638, "images/AussteigenButton/aktiviert.png") {
+                void onClick() {
+                  //sende aussteigen an Spielelogik!!!!!!
+                  world.useScene(Startscreen.class);
+                }
+            });
     }
 }

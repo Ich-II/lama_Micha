@@ -1,5 +1,4 @@
-import greenfoot.Actor;
-import greenfoot.World;
+import greenfoot.*;
 import java.util.ArrayList;
 
 /**
@@ -36,7 +35,7 @@ public class UIElement extends Actor {
         this.hidden = false;
         this.parentHidden = false;
         this.children = new ArrayList();
-        for (var c : children) addElement(c);
+        for (UIElement c : children) addElement(c);
         this.world = null;
     }
 
@@ -45,7 +44,7 @@ public class UIElement extends Actor {
      */
     public void addedToWorld(World w) {
         world = (UIWorld) w;
-        for (var c : children) world.addObject(c, c.x, c.y);
+        for (UIElement c : children) world.addObject(c, c.x, c.y);
     }
 
     /**
@@ -84,7 +83,7 @@ public class UIElement extends Actor {
      * @param parentHidden ob das aktuelle Element aktuell angezeigt wird.
      */
     private void updateChildren(boolean parentHidden) {
-        for (var c : children) {
+        for (UIElement c : children) {
             c.parentHidden = parentHidden;
             c.rerender();
             c.updateChildren(parentHidden);
@@ -100,7 +99,7 @@ public class UIElement extends Actor {
                 world.removeObject(this);
             }
             else {
-                var i = getImage();
+                GreenfootImage i = getImage();
                 world.addObject(this, x + i.getWidth() / 2, y + i.getHeight() / 2); 
             }
         } catch (Exception e) {

@@ -37,11 +37,12 @@ public class UIWorld extends World {
      * @param c die Klasse der Szene, die angezeigt werden soll
      */
     public void useScene(Class c) {
-        for (var s : scenes) {
+        for (Scene s : scenes) {
             if (s == getCurrentScene()) continue;
             
             if (c.isInstance(s)) {
                 if (history.size() != 0) getCurrentScene().hide();
+                if (history.size() >= 10) history.remove(0);
                 
                 history.add(s);
                 s.show();
